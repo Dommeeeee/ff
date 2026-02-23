@@ -442,115 +442,121 @@ html, body {
 /* ===== MOBILE LANDSCAPE ===== */
 @media (max-height: 500px) and (orientation: landscape) {
   .slide { 
-    padding: 12px 24px;
+    padding: 8px 16px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    max-height: 100vh;
+    overflow: hidden;
   }
   .slide-content {
-    max-width: 90%;
-    text-align: left;
+    max-width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: center;
   }
   .cover-title { 
-    font-size: 1.2rem; 
-    line-height: 1.1;
-    margin-bottom: 8px;
+    font-size: 1rem; 
+    line-height: 1;
+    margin-bottom: 4px;
   }
   .slide-title { 
-    font-size: 1.1rem; 
-    line-height: 1.1;
-    margin-bottom: 6px;
+    font-size: 0.9rem; 
+    line-height: 1;
+    margin-bottom: 4px;
   }
   .slide-desc { 
-    font-size: 0.75rem; 
-    line-height: 1.4;
-    margin-bottom: 16px;
+    font-size: 0.65rem; 
+    line-height: 1.2;
+    margin-bottom: 8px;
   }
   .badge, .tag {
-    font-size: 0.6rem;
-    padding: 4px 12px;
-    margin-bottom: 8px;
+    font-size: 0.5rem;
+    padding: 2px 8px;
+    margin-bottom: 4px;
   }
   .card { 
-    padding: 8px 10px;
-    margin-bottom: 8px;
+    padding: 6px 8px;
+    margin-bottom: 6px;
   }
   .card-title { 
-    font-size: 0.75rem; 
-    margin-bottom: 4px;
+    font-size: 0.65rem; 
+    margin-bottom: 2px;
   }
   .card-text { 
-    font-size: 0.65rem; 
-    line-height: 1.3;
-  }
-  .card-icon { 
-    font-size: 1.2rem; 
-    margin-bottom: 4px;
-  }
-  .stats-row { 
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .stat-box { 
-    min-width: 70px;
-    padding: 6px 10px;
-  }
-  .stat-num { 
-    font-size: 1rem; 
-  }
-  .stat-lbl { 
     font-size: 0.55rem; 
     line-height: 1.2;
   }
-  .info-row { 
-    gap: 8px;
+  .card-icon { 
+    font-size: 1rem; 
+    margin-bottom: 2px;
+  }
+  .stats-row { 
+    gap: 4px;
     flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stat-box { 
+    min-width: 60px;
+    padding: 4px 6px;
+  }
+  .stat-num { 
+    font-size: 0.9rem; 
+  }
+  .stat-lbl { 
+    font-size: 0.45rem; 
+    line-height: 1.1;
+  }
+  .info-row { 
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .info-box { 
-    min-width: 100px;
-    padding: 8px 10px;
+    min-width: 80px;
+    padding: 4px 6px;
   }
   .info-box .lbl { 
-    font-size: 0.55rem; 
+    font-size: 0.45rem; 
   }
   .info-box .val { 
-    font-size: 0.75rem; 
+    font-size: 0.6rem; 
   }
   .org-pills {
     flex-direction: row;
-    gap: 12px;
+    gap: 8px;
+    justify-content: center;
   }
   .org-pill {
-    padding: 8px 12px;
-  }
-  .org-flag {
-    font-size: 1.5rem;
-  }
-  .org-pill strong {
-    font-size: 0.8rem;
-  }
-  .org-pill small {
-    font-size: 0.6rem;
-  }
-  .compare-table {
-    font-size: 0.6rem;
-  }
-  .compare-table th, .compare-table td {
     padding: 4px 8px;
   }
+  .org-flag {
+    font-size: 1.2rem;
+  }
+  .org-pill strong {
+    font-size: 0.65rem;
+  }
+  .org-pill small {
+    font-size: 0.5rem;
+  }
+  .compare-table {
+    font-size: 0.5rem;
+  }
+  .compare-table th, .compare-table td {
+    padding: 2px 4px;
+  }
   .summary-note {
-    font-size: 0.7rem;
-    padding: 10px 16px;
+    font-size: 0.55rem;
+    padding: 6px 12px;
   }
   .bullet-list li {
-    font-size: 0.65rem;
-    padding: 2px 0;
+    font-size: 0.5rem;
+    padding: 1px 0;
   }
   .g3, .g2 {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
   }
   
   /* Cover slide specific landscape adjustments */
@@ -559,10 +565,11 @@ html, body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-height: 90vh;
   }
   .slide-cover .org-pills {
     flex-direction: row;
     justify-content: center;
-    margin-top: 12px;
+    margin-top: 8px;
   }
 }
