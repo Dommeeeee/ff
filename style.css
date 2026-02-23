@@ -479,10 +479,60 @@ html, body {
   .info-row { flex-wrap: wrap; }
 }
 @media (max-width: 600px) {
-  .slide { padding: 32px 16px 100px; }
+  .slide { padding: 24px 12px 80px; }
   .g3 { grid-template-columns: 1fr; }
-  .cover-title { font-size: 1.8rem; }
+  .g2 { grid-template-columns: 1fr; }
+  .cover-title { font-size: 1.6rem; line-height: 1.2; }
+  .slide-title { font-size: 1.4rem; }
+  .slide-desc { font-size: 0.85rem; }
   .org-pills { flex-direction: column; align-items: center; }
-  .compare-table { font-size: 0.72rem; }
-  .compare-table th, .compare-table td { padding: 8px 12px; }
+  .stats-row { gap: 8px; }
+  .stat-box { min-width: 100px; padding: 12px 16px; }
+  .stat-num { font-size: 1.5rem; }
+  .stat-lbl { font-size: 0.65rem; }
+  .info-row { gap: 8px; }
+  .info-box { min-width: 120px; padding: 12px 14px; }
+  .card { padding: 16px; }
+  .card-title { font-size: 0.85rem; }
+  .card-text { font-size: 0.72rem; }
+  .compare-table { font-size: 0.68rem; }
+  .compare-table th, .compare-table td { padding: 6px 10px; }
+  #nav-bar { bottom: 16px; padding: 6px 12px; }
+  .nav-btn { width: 32px; height: 32px; font-size: 0.9rem; }
+  #counter { font-size: 0.7rem; min-width: 36px; }
+  #dots-container { gap: 3px; }
+  .dot { width: 5px; height: 5px; }
+  .dot.active { width: 14px; }
+}
+
+/* ===== FULLSCREEN NAV HIDE ===== */
+:fullscreen #nav-bar,
+:fullscreen #key-hint,
+:fullscreen #slide-counter-top,
+:fullscreen #fs-btn {
+  display: none;
+}
+
+/* ===== TOUCH GESTURE AREAS ===== */
+.touch-area {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 25%;
+  z-index: 150;
+  cursor: pointer;
+}
+.touch-left { left: 0; }
+.touch-right { right: 0; }
+
+/* ===== MOBILE LANDSCAPE ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .slide { padding: 16px 20px 60px; }
+  .cover-title { font-size: 1.4rem; }
+  .slide-title { font-size: 1.2rem; }
+  .card { padding: 12px; }
+  .stats-row { gap: 6px; }
+  .stat-box { min-width: 80px; padding: 8px 12px; }
+  .stat-num { font-size: 1.2rem; }
+  .stat-lbl { font-size: 0.6rem; }
 }

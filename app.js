@@ -109,17 +109,35 @@ document.addEventListener('keydown', (e) => {
 // ===== TOUCH SWIPE =====
 let touchStartX = 0;
 let touchStartY = 0;
+let touchStartTime = 0;
 
 document.addEventListener('touchstart', (e) => {
   touchStartX = e.touches[0].clientX;
   touchStartY = e.touches[0].clientY;
+  touchStartTime = Date.now();
 }, { passive: true });
 
 document.addEventListener('touchend', (e) => {
   const dx = e.changedTouches[0].clientX - touchStartX;
   const dy = e.changedTouches[0].clientY - touchStartY;
-  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+  const dt = Date.now() - touchStartTime;
+  
+  // Check for valid swipe: horizontal distance > vertical, fast enough, and minimum distance
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 30 && dt < 500) {
     changeSlide(dx < 0 ? 1 : -1);
+  }
+}, { passive: true });
+
+// ===== TOUCH TAP AREAS =====
+document.addEventListener('touchend', (e) => {
+  const touch = e.changedTouches[0];
+  const screenWidth = window.innerWidth;
+  
+  // Left 25% = previous, Right 25% = next
+  if (touch.clientX < screenWidth * 0.25) {
+    changeSlide(-1);
+  } else if (touch.clientX > screenWidth * 0.75) {
+    changeSlide(1);
   }
 }, { passive: true });
 
