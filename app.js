@@ -3,20 +3,6 @@ const totalSlides = slides.length;
 let current = 0;
 let isAnimating = false;
 
-const progressBar = document.getElementById('progress-bar');
-const counterTop = document.getElementById('slide-counter-top');
-const counter = document.getElementById('counter');
-const btnPrev = document.getElementById('btn-prev');
-const btnNext = document.getElementById('btn-next');
-const dotsContainer = document.getElementById('dots-container');
-
-// ===== INIT DOTS =====
-slides.forEach((_, i) => {
-  const dot = document.createElement('div');
-  dot.className = 'dot' + (i === 0 ? ' active' : '');
-  dot.addEventListener('click', () => goToSlide(i));
-  dotsContainer.appendChild(dot);
-});
 
 // ===== INIT STARS (slide 0) =====
 const starsEl = document.getElementById('stars');
@@ -35,19 +21,6 @@ if (starsEl) {
   }
 }
 
-// ===== UPDATE UI =====
-function updateUI() {
-  const pct = ((current + 1) / totalSlides) * 100;
-  progressBar.style.width = pct + '%';
-  counterTop.textContent = `${current + 1} / ${totalSlides}`;
-  counter.textContent = `${current + 1} / ${totalSlides}`;
-  btnPrev.disabled = current === 0;
-  btnNext.disabled = current === totalSlides - 1;
-
-  document.querySelectorAll('.dot').forEach((d, i) => {
-    d.classList.toggle('active', i === current);
-  });
-}
 
 // ===== GO TO SLIDE =====
 function goToSlide(index) {
@@ -81,7 +54,6 @@ function goToSlide(index) {
     prevSlide.style.transform = '';
     prevSlide.style.opacity = '';
     current = index;
-    updateUI();
     isAnimating = false;
   }, 580);
 }
@@ -141,14 +113,4 @@ document.addEventListener('touchend', (e) => {
   }
 }, { passive: true });
 
-// ===== FULLSCREEN =====
-function toggleFS() {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen().catch(() => {});
-  } else {
-    document.exitFullscreen().catch(() => {});
-  }
-}
 
-// ===== INIT =====
-updateUI();

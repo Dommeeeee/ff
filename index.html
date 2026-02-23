@@ -10,10 +10,6 @@
 </head>
 <body>
 
-<div id="progress-bar"></div>
-<div id="slide-counter-top"></div>
-<button id="fs-btn" title="เต็มจอ" onclick="toggleFS()">⛶</button>
-<div id="key-hint">← → Space เพื่อเปลี่ยน Slide</div>
 
 <div id="presentation">
 
@@ -247,14 +243,6 @@
 <!-- TOUCH GESTURE AREAS -->
 <div class="touch-area touch-left" onclick="changeSlide(-1)" title="กลับ"></div>
 <div class="touch-area touch-right" onclick="changeSlide(1)" title="ถัดไป"></div>
-
-<!-- NAVIGATION -->
-<nav id="nav-bar">
-  <button class="nav-btn" id="btn-prev" onclick="changeSlide(-1)" disabled>&#8592;</button>
-  <div id="dots-container"></div>
-  <span id="counter">1 / 8</span>
-  <button class="nav-btn" id="btn-next" onclick="changeSlide(1)">&#8594;</button>
-</nav>
 
 <script src="app.js"></script>
 </body>
