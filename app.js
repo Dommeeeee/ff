@@ -113,4 +113,13 @@ document.addEventListener('touchend', (e) => {
   }
 }, { passive: true });
 
+// ===== FULLSCREEN =====
+function toggleFS() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  } else {
+    document.exitFullscreen().catch(() => {});
+  }
+}
+
 
