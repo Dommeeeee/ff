@@ -170,6 +170,22 @@ html, body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.cover-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.topic-chip {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
 .cover-sub {
   font-size: 1.1rem;
   color: var(--muted);
